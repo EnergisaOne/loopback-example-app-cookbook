@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
 
-gem 'berkshelf'
-gem 'foodcritic'
-gem 'thor-foodcritic'
+gem 'berkshelf', '~> 2.0.13'
+gem 'thor-foodcritic', '~> 0.2.0'
+gem 'test-kitchen', '~> 1.1.1'
