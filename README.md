@@ -17,6 +17,9 @@ This cookbook makes use of a vagrant plugin:
 
 > vagrant plugin install vagrant-berkshelf
 
+Converge two test nodes and run the tests against them:
+
+> bundle exec kitchen test
 
 # Attributes
 
