@@ -29,7 +29,8 @@ application "sls-sample-app-memory" do
   packages ["git"]
   repository "git://github.com/strongloop/sls-sample-app.git"
   nodejs do
+    environment "DB" => 'memory', "PORT" => "3000",
+      "LD_LIBRARY_PATH" => "$LD_LIBRARY_PATH:/srv/sls-sample-app-memory/current/node_modules/loopback-connector-oracle/node_modules/instantclient"
     entry_point "."
-    template "nodejs.upstart.conf.erb"
   end
 end
