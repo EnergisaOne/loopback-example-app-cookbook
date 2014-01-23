@@ -34,3 +34,25 @@ application "sls-sample-app-memory" do
     entry_point "."
   end
 end
+
+application "sls-sample-app-mongodb" do
+  path "/srv/sls-sample-app-mongodb"
+  packages ["git"]
+  repository "git://github.com/strongloop/sls-sample-app.git"
+  nodejs do
+    environment "DB" => 'mongodb', "PORT" => "3001",
+      "LD_LIBRARY_PATH" => "$LD_LIBRARY_PATH:/srv/sls-sample-app-mongodb/current/node_modules/loopback-connector-oracle/node_modules/instantclient"
+    entry_point "."
+  end
+end
+
+application "sls-sample-app-oracle" do
+  path "/srv/sls-sample-app-oracle"
+  packages ["git"]
+  repository "git://github.com/strongloop/sls-sample-app.git"
+  nodejs do
+    environment "DB" => 'oracle', "PORT" => "3002",
+      "LD_LIBRARY_PATH" => "$LD_LIBRARY_PATH:/srv/sls-sample-app-oracle/current/node_modules/loopback-connector-oracle/node_modules/instantclient"
+    entry_point "."
+  end
+end
