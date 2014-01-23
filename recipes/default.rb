@@ -23,3 +23,12 @@
 # OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
 # WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 #
+
+application "sls-sample-app-memory" do
+  path "/srv/sls-sample-app-memory"
+  packages ["git"]
+  repository "git://github.com/strongloop/sls-sample-app.git"
+  nodejs do
+    entry_point "."
+  end
+end
