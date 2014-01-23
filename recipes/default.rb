@@ -30,5 +30,6 @@ application "sls-sample-app-memory" do
   repository "git://github.com/strongloop/sls-sample-app.git"
   nodejs do
     entry_point "."
+    template "nodejs.upstart.conf.erb"
   end
 end
